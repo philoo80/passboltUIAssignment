@@ -1,0 +1,203 @@
+html, body {
+  height: 100%;
+}
+.login.page {
+  padding:2.4rem;
+
+  h1 {
+    margin-top:0;
+    font-size: 2.4rem;
+    color: @font-dim;
+  }
+  p {
+    font-size: 1.6rem;
+  }
+
+  .processing-wrapper {
+    display:block;
+    width: 10em;
+    height: 10em;
+    margin:auto;
+
+    .processing {
+      display:block;
+      text-align: center;
+    }
+    .processing:after {
+      display:block;
+      width: 10em;
+      height: 10em;
+      content: " ";
+      background: transparent @loading center center no-repeat;
+      background-size: auto 40%;
+    }
+  }
+
+  .login-form {
+    min-height: 16rem;
+
+    .form-actions {
+      text-align:center;
+      padding-top:1.2em;
+    }
+    .button + a {
+      font-size:1.6rem;
+      line-height: 2.4rem;
+      text-align:center;
+      display: inline-block;
+      margin-top:1.6rem;
+      cursor: pointer;
+    }
+  }
+
+  .email-sent-instructions {
+    text-align: center;
+
+    .email-sent-bg {
+      background: transparent url('@{images}/illustrations/email.png') top center no-repeat;
+      background-size: auto 90%;
+      height: 16rem;
+    }
+    h1 {
+      margin-top: 1.5em;
+      font-size: 2.4rem;
+    }
+    p {
+      padding: 0.5em 0.5em 0 0.5em;
+      margin-bottom: 0;
+    }
+  }
+
+  .choose-security-token {
+    .input-security-token {
+      .clearfix();
+      margin: 1em 0 1.5em 0;
+      label {
+        margin-bottom:.5em;
+      }
+      .input.text {
+        .rounded();
+        font-size: 3rem;
+        max-width: 10rem;
+        float: left;
+        text-align: center;
+        margin-right: 1em;
+      }
+      .circle-picker {
+        float:left;
+      }
+      .randomize-button-wrapper {
+        float:left;
+        width: 10rem;
+        text-align: center;
+        clear:both;
+        cursor: pointer;
+      }
+
+
+      .svg-icon svg{
+        height:.85em;
+        width:.85em;
+      }
+    }
+  }
+
+  .install-extension {
+    a.browser-webstore {
+      border: 0;
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 26rem;
+      }
+      &.firefox img{
+        padding: 1em 0;
+      }
+    }
+  }
+
+  .browser-not-supported {
+    a.browser {
+      border: 0;
+      img {
+        max-width: 26rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+
+  .login {
+
+    .login-user {
+      width: 100%;
+      margin: auto;
+
+      & > * {
+        text-align: center;
+      }
+
+      .login-user-name {
+        font-weight: bold;
+        font-size: 1.6rem;
+        line-height: 1rem;
+      }
+
+      .login-user-email {
+        font-size: 1.6rem;
+        line-height: 1rem;
+      }
+    }
+  }
+
+  .login-processing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+  }
+}
+
+@media only screen and (min-width: 42rem) {
+  body {
+    background:@background-splash;
+  }
+  .login.page {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 0 1fr 0.05fr;
+    grid-gap: 1px;
+    grid-template-areas: ". . ." ". login-form ." "footer footer footer";
+
+    .content {
+      grid-area: login-form;
+
+      .loading-bar {
+        display:block;
+      }
+      .logo {
+        margin:1.6em auto;
+        width: 20rem;
+        background-size: 20rem auto;
+      }
+
+      .login-form {
+        .box-shadow();
+        border-radius: .3rem;
+        max-width:37.2rem;
+        margin:auto;
+        padding:4.8rem 4rem 5.6rem 4rem;
+        background:@background-default;
+      }
+
+      .input.select.locale {
+        max-width: 45.2rem;
+        margin: auto;
+      }
+    }
+  }
+}

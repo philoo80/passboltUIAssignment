@@ -1,0 +1,20 @@
+.page.administration {
+  .mfa-settings {
+    .provider-section {
+      .description.enabled {
+        display: none;
+      }
+
+      &.enabled {
+        .description {
+          &.disabled {
+            display: none;
+          }
+          &.enabled {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

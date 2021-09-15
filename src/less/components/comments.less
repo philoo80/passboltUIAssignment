@@ -1,0 +1,95 @@
+/*
+ * Comment thread with add/edit form
+ */
+.panel.aside .comments {
+    width: 100%;
+
+    /* mini fixed fluid 2 columns layout */
+    .wrap-right-column {
+        float: left;
+        width: 100%;
+    }
+    .right-column {
+        margin-left: 2.5em;
+    }
+    .left-column {
+        float: left;
+        width: 2em;
+        margin-left: -100%;
+    }
+
+    .comment {
+        padding-bottom: .5em;
+        .clearfix();
+
+        p {
+            background: @background-lighter;
+            padding: 1em;
+            margin-left: 10px;
+        }
+
+        /* picture */
+        .author.picture {
+            width: 2em;
+            height: 2em;
+            margin-top: .25em;
+
+            img {
+                width: 2em;
+                height: 2em;
+            }
+            a {
+                border: 0;
+            }
+        }
+
+        /* username and date */
+        .metadata {
+            font-style: italic;
+            margin: .5em 0 1em 1em;
+
+            .author.username {
+                max-width: 48%;
+                float: left;
+                .ellipsis();
+            }
+            .author.username:after {
+                content: ', ';
+            }
+            .modified {
+                max-width: 48%;
+                padding-right: 2px;
+                padding-left: 4px;
+                color: @font-lighter;
+                .ellipsis();
+            }
+        }
+
+        /* actions */
+        .form-content {
+            margin-left:.5em;
+        }
+        .actions {
+            float: right;
+            margin-top: -2.25em;
+            margin-right: 0;
+        }
+
+        /* triangle bubble */
+        p:before {
+            content: ' ';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid @background-lighter;
+            margin-left: -1.8em;
+            margin-top: -.5em;
+        }
+        a.delete-comment {
+            border: 0;
+        }
+
+    }
+}

@@ -1,0 +1,41 @@
+/* tabs */
+.tabs {
+    border-bottom: 1px solid @border-default;
+    width: 100%;
+}
+
+.tabs-nav {
+    border-bottom: 1px solid @border-default;
+
+    li {
+        display: inline;
+        div {
+            display: inline-block;
+        }
+        a {
+            display: inline-block;
+            padding: .4em 1.75em;
+            margin-left: 1.25em;
+            font-size: 15px;
+            border: 0;
+
+            &.selected {
+                margin-bottom: -1px;
+                border: 1px solid @border-default;
+                border-bottom: 1px solid @tab-selected-background;
+                background: @tab-selected-background;
+                .rounded();
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+}
+
+/* tab content */
+.tab-content {
+    display: none;
+    &.selected {
+        display: block;
+    }
+}

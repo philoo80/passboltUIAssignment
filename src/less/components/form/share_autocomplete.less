@@ -1,0 +1,98 @@
+/*
+	form to add new permissions
+	basically this form is embedded in a dedicated iframe released by the plugin
+*/
+.form-content.permission-add {
+    label {
+        padding-bottom: .5em;
+        padding-top: 1em;
+        height: 1.5em;
+    }
+    .autocomplete input {
+        margin-bottom: 0;
+    }
+    .message {
+        padding-left: 0;
+    }
+}
+
+/*
+	autocomplete users results
+	basically this list of users is embedded in a dedicated iframe released by the plugin
+*/
+.autocomplete-wrapper {
+    position: relative;
+
+    .autocomplete-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 899;
+        padding: 0;
+        margin: 0;
+        border: 1px solid @border-default;
+        max-height: 10em;
+        overflow: auto;
+        box-sizing: border-box;
+
+        .row {
+            .clearfix();
+            font-size: .813em;
+            padding: .825em .5em .5em 1em;
+            border-bottom: 1px dotted @border-default;
+
+            &:last-child {
+                border: 0;
+            }
+            &.selected,
+            &:hover {
+                background: @background-lightest;
+            }
+            /* user summary */
+            .avatar img {
+                float: left;
+            }
+            .user,
+            .group {
+                width: 75%;
+                float: left;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            .name {
+                display: block;
+                .ellipsis();
+            }
+            .details {
+                color: @font-lighter;
+                .ellipsis();
+                display: block;
+            }
+
+            &.loading {
+                .info {
+                    margin-left: 3.8em;
+
+                    &:after {
+                        width: 60%;
+                        height: 100%;
+                        position: absolute;
+                        content: " ";
+                        top: 0px;
+                        left: 1.45em;
+                        background: transparent @loading left center no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    /* hide icons if there is no space */
+    @media all and (max-width: 440px) {
+        .autocomplete-content {
+            height: auto;
+            max-height: none;
+        }
+    }
+}

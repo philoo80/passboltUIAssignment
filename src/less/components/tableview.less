@@ -1,0 +1,209 @@
+/*
+ * Main Workspace - Table View
+ */
+.tableview {
+  background: @tableview-background;
+  position: relative;
+  font-size: .9375em; /* 15px */
+  height: 100%;
+
+  /* header */
+  .tableview-header {
+    background: @tableview-header-background;
+    height: 2.125em;
+    overflow-y: scroll;
+    padding-top: .125em;
+
+    table {
+      width: 100%;
+
+      th.m-cell.sortable, th.l-cell.sortable {
+        .svg-icon svg {
+          margin-left: 0.55em;
+        }
+      }
+    }
+  }
+
+  /* main content */
+  .tableview-content {
+    top: 2.125em;
+    bottom: 2.45em;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid @border-default;
+    overflow-y: scroll;
+    background: @tableview-background;
+
+    table {
+      width: 100%;
+    }
+  }
+
+  /* rows */
+  table {
+    a {
+      border: 0;
+    }
+
+    th, td {
+      text-align: left;
+      padding: .2em .2em; /* 3px 3px */
+      vertical-align: middle;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td div {
+      .ellipsis();
+    }
+
+    .s-cell {
+      width:1em;
+      max-width: 1em;
+      min-width: 1em;
+    }
+
+    .m-cell {
+      width: 9em;
+      max-width: 9em;
+      vertical-align: middle;
+    }
+
+    .l-cell {
+      width: 14em;
+      max-width: 14em;
+    }
+
+    .xl-cell {
+      width: 19em;
+      max-width: 19em;
+    }
+
+    .cell-header {
+      display: flex;
+    }
+
+    .cell-header-text {
+      flex: 0 1 auto;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .cell-header-icon-sort {
+      .svg-icon {
+        display: inherit;
+      }
+    }
+
+    tbody tr {
+      height: 2em;
+
+      &.selected {
+        background: @tableview-background-selected;
+      }
+
+      &:hover {
+        background: @tableview-background-hover;
+      }
+
+      &.selected:hover {
+        background: @tableview-background-selected;
+      }
+    }
+
+    tbody tr.inactive {
+      color: @font-lighter;
+    }
+
+    /* multi select and fav fix */
+    th.cell-multiple-select,
+    td.cell-multiple-select {
+      text-align: center;
+      .input.checkbox {
+        label {
+          display: none;
+        }
+      }
+    }
+
+    td.password {
+      .secret {
+        float: left;
+        max-width: calc(100% - 1.8rem); // password field - token
+      }
+      .password-view {
+        display: none;
+        position: relative;
+        box-sizing: content-box;
+        margin: 0 0 0 .3rem;
+        padding: 0 .3rem 0 .3rem;
+        background: 0 0;
+        border: 0;
+        float: left;
+
+        &.selected {
+          margin-top: .1rem;
+          display: block;
+          background: @button-selected-background;
+        }
+      }
+      &:hover {
+        .password-view {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// CHROME exclusive crassette
+@supports (-webkit-appearance:none) and (not (overflow:-webkit-marquee))
+and (not (-ms-ime-align:auto)) and (not (-moz-appearance:none))
+{
+  .tableview table {
+    th.cell-multiple-select,
+    td.cell-multiple-select {
+      .input.checkbox {
+        margin-top: 1px; //damn you chrome
+      }
+    }
+  }
+}
+
+/* hide secondary actions if there is no space */
+@media all and (max-width: 600px) {
+  .tableview {
+    table tbody {
+      background: @tableview-background-selected;
+
+      td {
+        display: block;
+
+        &.s-cell, &.s2-cell, &.m-cell, &.l-cell {
+          max-width: 90%;
+          width: 90%;
+          padding: .5em;
+        }
+
+        &.s-cell {
+          display: none;
+        }
+      }
+    }
+
+    thead {
+      display: none;
+    }
+
+    .tableview-content {
+      top: 0;
+      border: 0;
+      bottom: 0;
+    }
+  }
+}

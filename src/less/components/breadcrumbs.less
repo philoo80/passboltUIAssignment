@@ -1,0 +1,41 @@
+/*
+ * Breadcrumbs
+ */
+.breadcrumbs {
+    height: 2em;
+    padding: .1875em 0 .1875em .1875em;
+    margin-bottom: 0;
+    background: @breadcrumb-background;
+    ul {
+        padding-top: 0.45em;
+        margin-left: .1875em;
+        li {
+            display: inline-block;
+            font-size: .8em; /* 12px/base16>15 */
+            margin-left: .25em;
+            max-width: 25%;
+            float: left;
+            &:before {
+                content: "\203A"; /* unicode character › */
+                margin-right: .5em;
+            }
+            &:first-child {
+                margin-left: 0;
+                padding-left: 0;
+            }
+            &:first-child:before {
+                content: "";
+            }
+        }
+        a {
+            border: 0;
+        }
+    }
+    div.main-cell {
+        display: inline;
+    }
+}
+
+.panel.middle .breadcrumbs {
+    border-bottom: 1px solid @border-default;
+}

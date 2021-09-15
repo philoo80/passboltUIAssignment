@@ -1,0 +1,80 @@
+.quickaccess {
+    .item-browse {
+        .properties {
+            padding: 1.2rem 0 0 0;
+            .property {
+                .clearfix();
+                a {
+                    display:block;
+                    border:0;
+                }
+                .password-view {
+                  display: block;
+                  position: relative;
+                  box-sizing: content-box;
+                  margin: 0 0 0 .5rem;
+                  padding: .1rem .3rem .1rem .3rem;
+                  background: 0 0;
+                  border: 0;
+                  float: left;
+
+                  &.selected {
+                    background: @button-selected-background;
+                  }
+                }
+            }
+            .property-value {
+                width:18rem;
+                float:left;
+                padding:0 1rem 1.6rem 1.8rem;
+                .ellipsis();
+                &.empty {
+                  font-style: italic;
+                  color: @font-lightest
+                }
+            }
+            .property-name {
+                font-size:1.3rem;
+                color:@font-light;
+                width:18rem;
+                float:left;
+                padding:.8rem 1rem .4rem 1.8rem;
+            }
+            .property-action {
+                margin-top:2rem;
+                margin-right:1rem;
+                &.disabled {
+                  path {
+                    fill: @font-lightest;
+                  }
+                }
+            }
+            .secret {
+                display: inline-block;
+                height: .8rem;
+                float: left;
+                border: 0;
+                margin-left:1.8rem;
+                margin-bottom:1rem;
+                &.secret-copy {
+                  width:10.3rem;
+                  background: transparent @controls-dot repeat-x left 3px;
+                  &:hover {
+                    background: transparent @controls-dot-hover repeat-x left 3px;
+                  }
+                }
+                &.decrypted {
+                  max-width: 16rem;
+                  width: inherit;
+                  margin-left: 0;
+                  padding-right: 0;
+                }
+            }
+        }
+
+        .submit-wrapper {
+            margin-top:0;
+            padding:1.8rem;
+        }
+    }
+}

@@ -1,0 +1,180 @@
+/* palette */
+@white: #FFF;
+@black: #333;
+@blacker: #000;
+
+@blue-light: #2A9CEB;
+@blue: #2894DF;
+@blue-dark: #4271b7;
+@blue-twitter: #4099FF;
+@blue-facebook: #3B5998;
+
+@green-lightest: #EDF7EB;
+@green-light: #66CC00;
+@green: #009900;
+
+@yellow-lightest: #FFFAE7;
+@yellow-light: #FEF0BF;
+@yellow: #FFBD2E;
+@orange: #9F6000;
+
+@red: #D40101;
+@red-light: #DB5454;
+@red-dark: #92000C;
+
+@grey-darkest: #666;
+@grey-darker: #888;
+@grey-dark: #969696;
+@grey-2: #BBB;
+@grey-3: #CCC;
+@grey: #DDD;
+@grey-lighter: #EEE;
+@grey-lightest: #F3F3F3;
+
+/* borders */
+@border-lightest: @grey-lightest;
+@border-lighter: @grey-lighter;
+@border-light: @grey;
+@border-default: @grey;
+@border-dark: @grey-darker;
+@border-input: @grey-3;
+@border-input-light: @grey-2;
+@border-focus: @blue;
+@border-focus-dark: @blue-dark;
+
+/* font */
+@font-default: @black;
+@font-dim: @grey-darkest;
+@font-light: @grey-darker;
+@font-lighter: @grey-dark;
+@font-lightest: @grey; // not WCAG on background default, for decoration only
+@font-focus: @blue;
+@font-warning: @orange;
+@font-error: @red;
+@font-inverse-dark: @grey;
+@font-inverse: @white;
+@font-inverse-background: @grey-darkest;
+@font-success: @black;
+@font-notice: @black;
+
+/* background */
+@background-default: @white;
+@background-dark: @black;
+@background-light: @grey;
+@background-lighter: @grey-lighter;
+@background-lightest: @grey-lightest;
+
+@background-error: lighten(@red, 53%);
+@background-success: @green-lightest;
+@background-warning: @yellow-light;
+@background-updated: @yellow-lightest;
+@background-notice: lighten(@blue, 40%);
+@background-overlay: rgba(255, 255, 255, 0.9);
+@background-splash: @background-lightest;
+
+/* buttons */
+@button-text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+@button-primary-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.92);
+.button-background() {
+    background: @background-lighter;
+    background-image: linear-gradient(top, @background-lightest, @background-lighter);
+}
+.button-hover-background() {
+    background: @background-lightest;
+    background-image: linear-gradient(top, @background-lightest, @background-lightest);
+}
+@button-primary-background: @blue;
+@button-primary-border: @blue;
+@button-primary-color: @font-inverse;
+@button-primary-hover-background: @blue-light;
+@button-primary-hover-border: @blue-light;
+@button-primary-hover-color: @font-inverse;
+
+@button-disabled-color: @font-light;
+@button-disabled-background: @white;
+@button-disabled-border: @border-default;
+
+@button-selected-background: @background-lighter;
+@button-selected-border: @border-input-light;
+
+/* box shadows */
+@shadow: @background-light;
+@shadow-dark: @background-dark;
+
+/* dropdown menus */
+@dropdown-background: @background-default;
+@dropdown-item-hover-background: @background-lighter;
+
+/* inputs */
+@input-background: @white;
+@input-background-disabled: @grey-lightest;
+
+/* logo */
+@logourl: url('@{images}/logo/logo.svg');
+
+/* grid */
+@tableview-background: @background-default;
+@tableview-background-hover: lighten(@background-lightest,2);
+@tableview-background-selected: @yellow-lightest;
+@tableview-header-background: @background-default;
+@breadcrumb-background: @background-default;
+
+/* messages */
+@message-error-color: @font-default;
+@message-error-background: @background-error;
+@message-success-color: @font-default;
+@message-success-background: @background-success;
+@message-notice-color: @font-default;
+@message-notice-background: @background-notice;
+@message-warning-color: @font-default;
+@message-warning-background: @background-warning;
+
+/* sidebar */
+@panel-background: lighten(@background-default, 10);
+@sidebar-background: @background-default;
+@sidebar-border: @border-lightest;
+@sidebar-section-background: @background-default;
+@sidebar-section-header-background: @background-default;
+
+/* secret placeholder */
+@controls-dot:url('@{images}/controls/dot_black.svg');
+@controls-dot-hover:url('@{images}/controls/dot_red.svg');
+@controls-check:url('@{images}/controls/check_black.svg');
+@controls-chevron-right:url('@{images}/controls/chevron-right_black.svg');
+@controls-chevron-down:url('@{images}/controls/chevron-down_black.svg');
+
+/* tables */
+@table-background: @background-default;
+@table-border: @border-default;
+@table-row-even-background: @background-default;
+
+/* tabs */
+@tab-selected-background: @background-default;
+
+/* tags */
+@tag-color: @blue;
+@tag-border: @blue;
+@tag-background: rgba(42,156,235,0.05);
+@tag-hover-color: @font-inverse;
+@tag-hover-border: @blue;
+@tag-hover-background: @blue;
+
+/* tooltip */
+@tooltip-background: @background-dark;
+@tooltip-color: @font-inverse;
+
+/* loading animation */
+@loading: url('@{images}/controls/loading_light.svg');
+
+@scrollbar-background:#F9F9F9;
+@scrollbar-border: #E7E7E7;
+@scrollbar-track: #C1C1C1;
+
+/* svg fill */
+@fill-color: @black;
+@fill-light-color: @grey-darker;
+@fill-hover-color: @black;
+
+/* favorite icon fill */
+@favorite-fill-color: @red;
+@unfavorite-fill-color: @grey;

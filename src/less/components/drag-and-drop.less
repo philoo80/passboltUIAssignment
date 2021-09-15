@@ -1,0 +1,55 @@
+.drag-and-drop,
+.drag-and-drop-multiple {
+    position: absolute;
+    top: -1000px;
+    background: @grey-darkest;
+    border: 1px solid @grey-dark;
+    z-index: 9999999;
+    padding: 0.65em;
+    line-height: 1em;
+    color: @white;
+    border-radius: 5px;
+
+    svg {
+        position: absolute;
+        margin-top: -0.85em;
+        margin-left: 0.40em;
+
+        path {
+            fill: @white;
+        }
+    }
+
+    span.message {
+        display: inline;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &.not-allowed {
+            padding-left: 1.85em;
+        }
+    }
+
+}
+.drag-and-drop-multiple {
+    box-shadow: 0.25em 0.25em 0 -1px @grey-dark;
+
+    .count {
+        position: absolute;
+        top: -9px;
+        right: -3px;
+        font-size: .7em;
+        background: @red;
+        color: @white;
+        width: 1.5em;
+        height: 1.5em;
+        text-align: center;
+        line-height: 1.5em;
+        border-radius: 50%;
+        box-shadow: 0 0 1px @black;
+    }
+}
+.drop-focus {
+    background-color: @tableview-background-selected;
+}

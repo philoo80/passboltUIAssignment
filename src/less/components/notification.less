@@ -1,0 +1,57 @@
+/*
+ * Notification
+ */
+
+.notification-container {
+    font-size:.85em;
+    top: 0;
+    position: absolute;
+    z-index: 991;
+    height: 2em;
+    padding-top: 1em;
+    width:60%;
+    margin-left:20%;
+
+    .notification {
+        position: relative;
+        left: 50%;
+        float: left;
+        clear: both;
+        margin-bottom: 1em;
+
+        .message {
+            &.warning {
+              color:@message-warning-color;
+              background: @message-warning-background;
+            }
+
+            .box-shadow-dark();
+            border-radius:2px;
+            padding: .5em 1em;
+            position: relative; left: -50%; float: left;
+            color: @blacker;
+            font-weight: normal;
+            width:auto;
+
+            .content {
+                strong {
+                    text-transform: capitalize;
+                }
+                margin-right: 1em;
+            }
+
+            .action {
+                border-bottom: none;
+                margin-left: .4em;
+
+                &:hover {
+
+                    .svg-icon svg {
+                        fill: rgb(0,0,0);
+                    }
+                }
+            }
+
+        }
+    }
+}
