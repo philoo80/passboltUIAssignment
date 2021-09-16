@@ -3377,7 +3377,7 @@ button:active,
 }
 .button.primary:hover {
   background: #ee7133;
-  border: 5px solid #ee7133;
+  border: 1px solid #ee7133;
   color: #FFF;
 }
 .button.primary:active,
